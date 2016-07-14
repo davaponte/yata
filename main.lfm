@@ -1,0 +1,106 @@
+object MainForm: TMainForm
+  Left = 930
+  Height = 654
+  Top = 253
+  Width = 400
+  HorzScrollBar.Visible = False
+  VertScrollBar.Visible = False
+  BorderStyle = bsSingle
+  Caption = 'YATA [Yet Another Tetris Attempt]'
+  ClientHeight = 628
+  ClientWidth = 400
+  Menu = MainMenu
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '1.6.0.4'
+  object ScrollBox: TScrollBox
+    Left = 0
+    Height = 600
+    Top = 0
+    Width = 400
+    HorzScrollBar.Page = 1
+    HorzScrollBar.Visible = False
+    VertScrollBar.Page = 1
+    VertScrollBar.Visible = False
+    Align = alClient
+    AutoScroll = False
+    BorderStyle = bsNone
+    Constraints.MinHeight = 600
+    Constraints.MinWidth = 400
+    Color = clBlack
+    ParentColor = False
+    TabOrder = 0
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Height = 28
+    Top = 600
+    Width = 400
+    Panels = <>
+  end
+  object MainMenu: TMainMenu
+    left = 208
+    top = 8
+    object MenuItem1: TMenuItem
+      Caption = '&Main'
+      object MenuItem2: TMenuItem
+        Caption = 'New game'
+      end
+      object MenuItem3: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem4: TMenuItem
+        Caption = 'E&xit'
+        ShortCutKey2 = 32856
+        OnClick = MenuItem4Click
+      end
+    end
+    object MenuItem5: TMenuItem
+      Caption = '&About'
+    end
+    object MenuItem6: TMenuItem
+      Caption = '&Test'
+      object MenuItem8: TMenuItem
+        Caption = '1'
+        OnClick = MenuItem6Click
+      end
+      object MenuItem9: TMenuItem
+        Caption = '2'
+        OnClick = MenuItem7Click
+      end
+      object MenuItem10: TMenuItem
+        Caption = '3'
+        OnClick = MenuItem10Click
+      end
+    end
+  end
+  object ActionList: TActionList
+    left = 308
+    top = 8
+    object ActionMoveRight: TAction
+      Caption = 'MoveRight'
+      OnExecute = ActionMoveRightExecute
+      ShortCut = 39
+    end
+    object ActionMoveLeft: TAction
+      Caption = 'MoveLeft'
+      OnExecute = ActionMoveLeftExecute
+      ShortCut = 37
+    end
+    object ActionRotate: TAction
+      Caption = 'Rotate'
+      OnExecute = ActionRotateExecute
+      ShortCut = 38
+    end
+    object ActionDown: TAction
+      Caption = 'Down'
+      OnExecute = ActionDownExecute
+      ShortCut = 40
+    end
+    object ActionDrop: TAction
+      Caption = 'Drop'
+      ShortCut = 32
+    end
+  end
+end
